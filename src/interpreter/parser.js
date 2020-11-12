@@ -28,37 +28,34 @@ export default function parse(lines) {
                     })
                 }
                 if ((current_token.value == 'above') || (current_token.value == 'below')) {
-                    let B = {
-                        details: []
-                    }
+                    let B = {}
                     B.type = "position";
                     B.value = current_token.value;
                     let arr = []
+
                     while (tokens.length > 0) {
                         const c_token = tokens.shift();
                         if (c_token.value.startsWith('$')) {
-                            B.details.push({
-                                offsetParent: c_token.value
-                            })
+                            B.offsetParent = c_token.value;
                         } else if (!isNaN(c_token.value)) {
                             arr.push(c_token.value);
                         }
                         if (c_token.value == 'px') {
-                            B.details.push({
-                                unit: "px"
-                            })
+                            B.unit = "px";
                         }
                     }
                     switch (current_token.value) {
                         case "above":
-                            B.details.push({
-                                top: arr
-                            })
+                            B.range = arr;
+                            // B.top.push({
+                            //     top: arr
+                            // })
                             break;
                         case "below":
-                            B.details.push({
-                                bottom: arr
-                            })
+                            B.range = arr;
+                            // B.top.push({
+                            //     bottom: arr
+                            // })
                             break;
                     }
                     
@@ -69,8 +66,7 @@ export default function parse(lines) {
         }
         
         const next_line = lines[i+1];
-        if (String(next_line).trim() != '') {
-            //console.log(">>> Next line: ", next_line);
+        if (String(next_line).trim() != '') {            
             const next_tokens = lexer(String(next_line));
             while (next_tokens.length > 0) {
                 const next_c_token = next_tokens.shift();
@@ -84,6 +80,10 @@ export default function parse(lines) {
         }
     }
     AST.push(A);
+
+    console.log("***************************** PARSER OUTPUT *****************************");
+    console.log(JSON.stringify(AST, null, 2));
+
     return AST;
 }
 
