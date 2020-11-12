@@ -1,9 +1,13 @@
-import selenium from 'selenium-webdriver';
-const { Builder, By, Key, until } = selenium;
-import chai from 'chai';
-const { expect, assert } = chai;
+// import selenium from 'selenium-webdriver';
+// const { Builder, By, Key, until } = selenium;
+// import chai from 'chai';
+// const { expect, assert } = chai;
+const { Builder, By, Key, until } = require('selenium-webdriver');
+const { expect } = require('chai')
 
-import generate from './generator.js';
+//import generate from './generator.js';
+const generate = require('./generator.js')
+
 
 const getActualY = (selector, generated) => {
     let arr = generated.map(x => x);
@@ -24,7 +28,7 @@ const getSelectorByElementVariable = (varName, trans_ast) => {
 }
 
 
-const compile = async (driver, trans_ast) => {
+module.exports = async function compile(driver, trans_ast) {
     let specs = trans_ast.map(x => x);
     let arr = trans_ast.map(x => x);
     const generated = await generate(driver, trans_ast);    
@@ -93,4 +97,4 @@ const compile = async (driver, trans_ast) => {
     return generated;
 }
 
-export default compile;
+//export default compile;

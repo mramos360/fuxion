@@ -1,5 +1,5 @@
 
-const transform = ast => {
+module.exports = function transform(ast) {
     let trans_ast = [];
         
     while (ast.length > 0) {
@@ -32,4 +32,4 @@ const transform = ast => {
     return trans_ast;
 }
 
-export default transform;
+//export default transform;

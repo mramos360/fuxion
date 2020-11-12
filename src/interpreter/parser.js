@@ -1,8 +1,8 @@
-import lexer from './lexer.js';
-import _ from 'lodash';
+//import lexer from './lexer.js';
+const lexer = require('./lexer.js');
 
 
-export default function parse(lines) {
+module.exports = function parse(lines) {
     let AST = [];
     let A = {
         specs: []

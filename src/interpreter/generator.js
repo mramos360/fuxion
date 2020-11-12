@@ -1,8 +1,8 @@
-import selenium from 'selenium-webdriver';
-const { Builder, By, Key, until } = selenium;
+//import selenium from 'selenium-webdriver';
+const { Builder, By, Key, until } = require('selenium-webdriver');
 
 
-const generate = async (driver, trans_ast) => {
+module.exports = async function generate(driver, trans_ast) {
 
     let generated = [];
     let temp = [trans_ast];
@@ -23,4 +23,4 @@ const generate = async (driver, trans_ast) => {
     return generated;
 }
 
-export default generate;
+//export default generate;
