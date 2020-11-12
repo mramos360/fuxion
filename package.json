@@ -1,7 +1,32 @@
 {
-    "name": "@mramos360/fuxion",
-    "version": "1.0.0",
-    "main": "index.js",
-    "repository": "mramos360/fuxion",
-    "license": "MIT"
+  "name": "@mramos360/fuxion",
+  "version": "1.0.1",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mramos360/fuxion.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0"
+  },
+  "description": "## Install `npm install @mramos360/fuxion`",
+  "bugs": {
+    "url": "https://github.com/mramos360/fuxion/issues"
+  },
+  "homepage": "https://github.com/mramos360/fuxion#readme",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": ""
 }
