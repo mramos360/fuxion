@@ -1,8 +1,6 @@
-import lexer from './src/interpreter/lexer.js';
 import parse from './src/interpreter/parser.js';
 import transform from './src/interpreter/transformer.js';
 import compile from './src/interpreter/compiler.js';
-import fs from 'fs';
 
 
 export default function checkUX(driver, specFilePath) {
