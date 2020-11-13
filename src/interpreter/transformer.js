@@ -26,8 +26,8 @@ module.exports = function transform(ast) {
         }       
         trans_ast.push(T)  
     }
-    // console.log("***************************** TRANSPILER OUTPUT *****************************");
-    // console.log(JSON.stringify(trans_ast, null, 2));
+    console.log("***************************** TRANSPILER OUTPUT *****************************");
+    console.log(JSON.stringify(trans_ast, null, 2));
 
     return trans_ast;
 }
