@@ -81,8 +81,8 @@ module.exports = function parse(lines) {
     }
     AST.push(A);
 
-    console.log("***************************** PARSER OUTPUT *****************************");
-    console.log(JSON.stringify(AST, null, 2));
+    // console.log("***************************** PARSER OUTPUT *****************************");
+    // console.log(JSON.stringify(AST, null, 2));
 
     return AST;
 }
